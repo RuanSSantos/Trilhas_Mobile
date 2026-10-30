@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechZone - Simulador de Compras</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>TechZone</h1>
+        <p>A sua loja de tecnologia e acessórios essenciais do dia a dia.</p>
+    </header>
+
+    <main>
+        <section class="instructions">
+            <h2>Como simular a sua compra</h2>
+            <p>Clique no botão <strong>"Simular compra"</strong> abaixo. O sistema irá perguntar a quantidade que deseja de cada produto e apresentará o resumo e valor total no final.</p>
+        </section>
+
+        <section class="products-grid">
+            <article class="product-card">
+                <h3>Fone de Ouvido Bluetooth</h3>
+                <p class="description">Som de alta fidelidade com cancelamento de ruído ativo.</p>
+                <p class="price">R$ 150,00</p>
+            </article>
+
+            <article class="product-card">
+                <h3>Mouse Sem Fio Ergonómico</h3>
+                <p class="description">Design confortável para longas horas de trabalho e precisão ótica.</p>
+                <p class="price">R$ 80,00</p>
+            </article>
+
+            <article class="product-card">
+                <h3>Teclado Mecânico RGB</h3>
+                <p class="description">Teclas táticas com iluminação personalizável para trabalho ou jogos.</p>
+                <p class="price">R$ 250,00</p>
+            </article>
+        </section>
+
+        <div class="action-area">
+            <button id="btn-simular" onclick="simularCompra()">Simular compra</button>
+        </div>
+    </main>
+
+    <footer>
+        <p>Desenvolvido por: [Seu Nome Aqui] | Trilha de Desenvolvimento Mobile</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
