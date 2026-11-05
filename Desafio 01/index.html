@@ -1,53 +1,83 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TechZone - Simulador de Compras</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Desafio 01_Loja de Compras</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <header>
-        <h1>TechZone</h1>
-        <p>A sua loja de tecnologia e acessórios essenciais do dia a dia.</p>
-    </header>
+  <header class="topo">
+    <h1>Loja de Hardware</h1>
+    <p>Loja de peças e artigos de computadores.</p>
+  </header>
 
-    <main>
-        <section class="instructions">
-            <h2>Como simular a sua compra</h2>
-            <p>Clique no botão <strong>"Simular compra"</strong> abaixo. O sistema irá perguntar a quantidade que deseja de cada produto e apresentará o resumo e valor total no final.</p>
-        </section>
+  <main>
+    <section class="instrucoes">
+      <h2>Como usar o simulador</h2>
+      <ol>
+        <li>Confira os produtos e os preços abaixo.</li>
+        <li>Clique no botão <strong>"Simular compra"</strong> no final da pagina(está destacado na cor azul).</li>
+        <li>Digite a quantidade desejada de cada produto (use <strong>0</strong> para não comprar nada).</li>
+        <li>Um promp de alerta deve aparecer com os valores de cada produto e do valor total da compra.</li>
+      </ol>
+      <p class="promo">🎉 Compras a partir de <strong>R$ 3.000,00</strong> ganham <strong>10% de desconto</strong>!</p>
+    </section>
 
-        <section class="products-grid">
-            <article class="product-card">
-                <h3>Fone de Ouvido Bluetooth</h3>
-                <p class="description">Som de alta fidelidade com cancelamento de ruído ativo.</p>
-                <p class="price">R$ 150,00</p>
-            </article>
+    <section class="produtos">
+      <article class="card">
+        <img src="assets/memoria-ram.png" alt="Memória RAM DDR5">
+        <h3>Memória RAM 16GB DDR5</h3>
+        <p>Pente de 16GB, 6000MHz, ideal para jogos e multitarefa.</p>
+        <span class="preco">R$ 389,90</span>
+      </article>
 
-            <article class="product-card">
-                <h3>Mouse Sem Fio Ergonómico</h3>
-                <p class="description">Design confortável para longas horas de trabalho e precisão ótica.</p>
-                <p class="price">R$ 80,00</p>
-            </article>
+      <article class="card">
+        <img src="assets/gabinete.png" alt="Gabinete gamer">
+        <h3>Gabinete Gamer</h3>
+        <p>Lateral em vidro temperado, ótimo fluxo de ar.</p>
+        <span class="preco">R$ 459,90</span>
+      </article>
 
-            <article class="product-card">
-                <h3>Teclado Mecânico RGB</h3>
-                <p class="description">Teclas táticas com iluminação personalizável para trabalho ou jogos.</p>
-                <p class="price">R$ 250,00</p>
-            </article>
-        </section>
+      <article class="card">
+        <img src="assets/placa-mae.png" alt="Placa-mãe">
+        <h3>Placa-Mãe AM5</h3>
+        <p>Chipset B650, suporte a DDR5, AM5.</p>
+        <span class="preco">R$ 899,90</span>
+      </article>
 
-        <div class="action-area">
-            <button id="btn-simular" onclick="simularCompra()">Simular compra</button>
-        </div>
-    </main>
+      <article class="card">
+        <img src="assets/placa-de-video.png" alt="Placa de vídeo">
+        <h3>Placa de Vídeo 8GB</h3>
+        <p>A placa gráfica AMD Radeon™ RX 7600 estabeleceu um novo nível de desempenho para gamers e streamers. Apresentando unidades de computação AMD RDNA™ 3 unificadas e velocidades de clock extremamente rápidas, para permitir desempenho avançado de jogos com alta taxa de atualização em 1080p.</p>
+        <span class="preco">R$ 2.499,90</span>
+      </article>
 
-    <footer>
-        <p>Desenvolvido por: [Seu Nome Aqui] | Trilha de Desenvolvimento Mobile</p>
-    </footer>
+      <article class="card">
+        <img src="assets/fone-de-ouvido.png" alt="Fone de ouvido headset">
+        <h3>Fone de Ouvido Headset</h3>
+        <p>Som surround 7.1, microfone removível e almofadas macias.</p>
+        <span class="preco">R$ 249,90</span>
+      </article>
 
-    <script src="script.js"></script>
+      <article class="card">
+        <img src="assets/mouse.png" alt="Mouse gamer">
+        <h3>Mouse Gamer</h3>
+        <p>Sensor óptico de 12.000 DPI, 6 botões e iluminação RGB.</p>
+        <span class="preco">R$ 149,90</span>
+      </article>
+    </section>
+
+    <div class="acao">
+      <button class="btn-simular" onclick="simularCompra()">Simular compra</button>
+    </div>
+  </main>
+
+  <footer class="rodape">
+    <p>Aluno <strong>Ruan da Silva Santos. </strong>Trilha de Desenvolvimento Mobile</p>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
