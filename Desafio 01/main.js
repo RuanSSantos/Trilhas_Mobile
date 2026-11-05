@@ -1,57 +1,81 @@
+// Lista dos produtos
+const produtos = [
+  { name: "Memória RAM 16GB DDR5", preco: 389.90 },
+  { name: "Gabinete Gamer", preco: 459.90 },
+  { name: "Placa-Mãe AM5", preco: 899.90 },
+  { name: "Placa de Vídeo 8GB", preco: 2499.90 },
+  { name: "Fone de Ouvido Headset", preco: 249.90 },
+  { name: "Mouse Gamer", preco: 149.90 }
+];
+
+// Formata um número como moeda brasileira (ex.: R$ 1.234,50) < esse aqui achei legal 
+function formatarMoeda(valor) {
+  return valor.toLocaleString("pt-BR", { style: "currency", currency: "BRL" });
+}
+
+// iniciando a compra
 function simularCompra() {
-    // Definição dos produtos (devem corresponder aos preços apresentados na página)
-    const p1Nome = "Fone de Ouvido Bluetooth";
-    const p1Preco = 150.00;
+  const quantidades = [];
 
-    const p2Nome = "Mouse Sem Fio Ergonómico";
-    const p2Preco = 80.00;
+  // Pergunta a quantidade de cada produto
+  for (let i = 0; i < produtos.length; i++) {
+    const produto = produtos[i];
+    let quantidade;
+    let valido = false;
 
-    const p3Nome = "Teclado Mecânico RGB";
-    const p3Preco = 250.00;
+    while (!valido) {
+      const resposta = prompt(
+        "Quantas unidades de \"" + produto.name + "\" você deseja?\n" +
+        "Preço: " + formatarMoeda(produto.preco) + "\n" +
+        "(Digite 0 para não comprar)"
+      );
 
-    // 1. Perguntar as quantidades com prompt()
-    let q1Input = prompt(`Quantas unidades de "${p1Nome}" (R$ ${p1Preco.toFixed(2)}) deseja comprar?`, "0");
-    let q2Input = prompt(`Quantas unidades de "${p2Nome}" (R$ ${p2Preco.toFixed(2)}) deseja comprar?`, "0");
-    let q3Input = prompt(`Quantas unidades de "${p3Nome}" (R$ ${p3Preco.toFixed(2)}) deseja comprar?`, "0");
-
-    // 2. Converter as respostas para número com Number()
-    let q1 = Number(q1Input) || 0;
-    let q2 = Number(q2Input) || 0;
-    let q3 = Number(q3Input) || 0;
-
-    // Garantir que não existam valores negativos
-    q1 = Math.max(0, q1);
-    q2 = Math.max(0, q2);
-    q3 = Math.max(0, q3);
-
-    // Verificar se nada foi selecionado
-    if (q1 === 0 && q2 === 0 && q3 === 0) {
-        alert("Nenhum produto foi selecionado para compra.");
+      // Cancelar a compra
+      if (resposta === null) {
+        alert("Simulação cancelada.");
         return;
+      }
+
+      // Convertor da resposta para numeros
+      quantidade = Number(resposta);
+
+      // Valida: precisa ser número inteiro, não negativo e a resposta não pode ser vazia
+      if (resposta.trim() === "" || isNaN(quantidade) || quantidade < 0 || !Number.isInteger(quantidade)) {
+        alert("Valor inválido! Digite um número inteiro igual ou maior que 0.");
+      } else {
+        valido = true;
+      }
     }
 
-    // 3. Calcular os valores parciais e o total
-    const totalP1 = q1 * p1Preco;
-    const totalP2 = q2 * p2Preco;
-    const totalP3 = q3 * p3Preco;
+    quantidades.push(quantidade);
+  }
 
-    const valorTotal = totalP1 + totalP2 + totalP3;
+  // Calcula os valores de preço × quantidade e alert
+  let total = 0;
+  let resumo = "===== RESUMO DA COMPRA =====\n\n";
+  let algumSelecionado = false;
 
-    // 4. Montar a mensagem de resumo e exibir com alert()
-    let resumo = "--- RESUMO DA COMPRA ---\n\n";
+  for (let i = 0; i < produtos.length; i++) {
+    if (quantidades[i] > 0) {
+      const subtotal = produtos[i].preco * quantidades[i];
+      total += subtotal;
+      algumSelecionado = true;
 
-    if (q1 > 0) {
-        resumo += `${p1Nome}: ${q1}x = R$ ${totalP1.toFixed(2)}\n`;
+      resumo += produtos[i].name + "\n" +
+                "  Quantidade: " + quantidades[i] + "\n" +
+                "  Valor: " + formatarMoeda(subtotal) + "\n\n";
     }
-    if (q2 > 0) {
-        resumo += `${p2Nome}: ${q2}x = R$ ${totalP2.toFixed(2)}\n`;
-    }
-    if (q3 > 0) {
-        resumo += `${p3Nome}: ${q3}x = R$ ${totalP3.toFixed(2)}\n`;
-    }
+  }
 
-    resumo += `\n------------------------\n`;
-    resumo += `VALOR TOTAL: R$ ${valorTotal.toFixed(2)}`;
+  //total a pagar.
+  resumo += "TOTAL A PAGAR: " + formatarMoeda(total);
 
-    alert(resumo);
+  // alerta se nenhum produto for selecionado
+  if (!algumSelecionado) {
+    alert("Nenhum produto foi selecionado.");
+    return;
+  }
+
+  // 4. Exibe o resultado com alert()
+  alert(resumo);
 }
