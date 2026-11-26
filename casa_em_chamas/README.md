@@ -1,8 +1,8 @@
-# 🧑‍🚒 Desafio HTML – Casa Virtual
+#Desafio HTML – Casa Virtual
 
-Mini jogo de aventura em texto feito **somente com HTML**, proposto na aula *6 – Casa em Chamas* do curso **Introdução ao Desenvolvimento Web: HTML, CSS e JavaScript** (Plataforma Mais Robotic, trilha *Fundamentos da Web com HTML*).
+Mini jogo de aventura em texto feito em HTML, proposto na aula.
 
-## 📖 Sobre o desafio
+## Sobre o desafio
 
 O jogador deve entrar em uma casa virtual e localizar um objeto específico. O jogo começa na frente da casa e termina quando o jogador entra em um cômodo predeterminado.
 
@@ -15,20 +15,20 @@ A interação acontece conforme o jogador navega pelos diferentes espaços da ca
 
 A proposta minimiza as dicas fornecidas, desafiando a desenvolver a experiência de forma autônoma, utilizando apenas recursos do HTML.
 
-## 🎨 Tema
+## Tema
 
 O tema é livre: pode ser uma caça ao tesouro, ou o tema de bombeiros. Sugestão de início para o tema de bombeiros:
 
-> **🧑‍🚒 Herói das Chamas**
+> **Herói das Chamas**
 >
 > Você é um bravo bombeiro, sua missão é encontrar o cômodo que ainda tem uma pessoa nessa casa em chamas!
 >
-> 🔥 Depressa! Você está na frente da casa. O que você faz? 🔥
+> Depressa! Você está na frente da casa. O que você faz?
 >
 > - Entro pela porta
 > - Entro pela janela
 
-## 🗺️ Planta da casa
+## Planta da casa
 
 ```
  ┌───────────────────────────────┐
@@ -58,19 +58,13 @@ Conexões:
 | Banheiro | cozinha |
 | Quarto do meio (✖) | cozinha (porta) – **objetivo do jogo** |
 
-## 📋 Requisitos do jogo
-
-> ⚠️ A lista de requisitos não aparece no material de origem (a página foi cortada logo após "Os requisitos do jogo são:"). Complete esta seção com os requisitos da plataforma.
-
-- [ ] _(preencher)_
-
-## 🚀 Como jogar
+## Como jogar
 
 1. Baixe todos os arquivos `.html` para a **mesma pasta**.
 2. Abra o `index.html` no navegador.
 3. Clique nos links para escolher suas ações e encontre a pessoa que ainda está na casa.
 
-## 📁 Estrutura do projeto
+## Estrutura do projeto
 
 ```
 .
@@ -83,10 +77,5 @@ Conexões:
 └── quarto-central.html   # Final – missão cumprida
 ```
 
-## 🛠️ Tecnologias
 
-- HTML5 (sem CSS e sem JavaScript, conforme a proposta do desafio)
 
-## 🔗 Fonte
-
-Material da aula: <https://plataforma.maisrobotic.com.br/study/course/17/39/phase/185>
